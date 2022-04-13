@@ -1,0 +1,45 @@
+1. Dibujar un butón en un canvas y que produzca el efecto de pulsado
+    - Eventos mousePressed y mouseReleased del interfaz MouseListener
+    
+2. Encapsular la funcionalidad en la clase Boton y delegar los eventos
+
+3. Producir el evento clicked a partir de los eventos mousePressed y mouseReleased
+    a) La liberación del efecto de pulsado se produce de forma incondicional al soltar el ratón
+    b) La generación de clicked solo se produce cuando se ha producido una presión y liberación
+        dentro del área del botón.
+    c) Crear los eventos onPressed, onReleased y onClicked y utilizarlos en las derivadas
+
+4. Modificar la funcionalidad de gestión de eventos basados en la herencia por el uso de interface.
+    Comparar y sacar conclusiones.
+    a) Limitación por herencia a ocuparla en ese uso, impidiendo otras posibles herencias.
+    b) Asociación mediante interfaz independiente de la herencia.
+    
+5. Dibujar un rectángulo a modo de ventana y moverlo al arrastrar el ratón
+    - Eventos mouseDragged y mouseMoved del interfaz MouseMotionListener
+    
+6. Resumir las funcionalidades comunes entre los dos componentes y crear la clase Componente y WindowManager
+    a) Refactorizar el código hasta que funcione igual con el nuevo ajuste
+    
+    b) Agregar un ArrayList a la clase Ventana y un método addComponente para que la ventana delegue
+    en sus componentes internos los ventos y todo funcione al desplazar la ventana
+    
+    c) Cambiar el nombre del CanvasScreen por CWindowManager y que gestione la lista de componentes raíz
+
+7. Generar excepciones
+    a) En la clase CComponent crear un método que permita ajustar la geometría 
+        public void setBounds (int x, int y, int width, int height)
+        - Si el método tiene un ancho o alto inferior a 1 generar excepción en tiempo de ejecución
+        - Crear la clase CComponentBoundsException
+
+8. Crear librería e incorporarla en un proyecto
+    a) Las clases se encuentran en paquetes anónimos, crear los paquetes correspondientes
+        package: ccomponents
+        
+    b) Separar en un proyecto de test el interfaz de usuario de prueba
+        package: gui
+        
+    b) Compilar y crear un archivo jar llamado ccomponents.jar sin Main-Class
+    c) Agregar la librería al directorio lib/ del proyecto test
+    d) Compilar el proyecto de test usando la librería como classpath
+    c) Extraer en el mismo directorio de classes los archivos de la librería
+    d) Empaquetar todo en un nuevo ejecutable con Main-Class en el manifest.mf
