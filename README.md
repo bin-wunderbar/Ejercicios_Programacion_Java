@@ -1,3 +1,3 @@
-# Ejercicios_Programaci-n_Java
+# Ejercicios_Programación_Java
 
 #Simples ejemplos de programación con lenguaje java
